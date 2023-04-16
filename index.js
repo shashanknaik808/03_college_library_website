@@ -73,11 +73,11 @@ function libraryFormSubmit(e) {
 
         display.add(book);
         display.clear();
-        display.show('success')
-        }
-        else {
-            // Show error to the user
-            display.show('error');
-        }
+        display.show('success', 'Your book has been successfully added')
+    }
+    else {
+        // Show error to the user
+        display.show('danger', 'Sorry you cannot add this book');
+    }
     
     }
