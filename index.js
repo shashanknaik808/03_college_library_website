@@ -15,11 +15,29 @@ function Display() {
 // Add methods to display prototype
 Display.prototype.add = function (book) {
     console.log("Adding to UI");
+    tableBody = document.getElementById('tableBody');
+    let uiString = `<tr>
+                        <td>${book.name}</td>
+                        <td>${book.author}</td>
+                        <td>${book.type}</td>
+                    </tr>`;
+    tableBody.innerHTML += uiString;
 }
 
+// Implement the clear function
 Display.prototype.clear = function () {
     let libraryForm = document.getElementById('libraryForm');
     libraryForm.reset();
+}
+
+// Implement the validate function
+Display.prototype.validate = function (book) {
+    if (book.name.length < 2 || book.author.length < 2) {
+        return false
+    }
+    else {
+        return true;
+    }
 }
 
 // Add submit event listener to libraryForm
@@ -50,6 +68,16 @@ function libraryFormSubmit(e) {
     console.log(book);
 
     let display = new Display();
-    display.add(book);
-    display.clear();
-}
+
+    if (display.validate(book)) {
+
+        display.add(book);
+        display.clear();
+        display.show('success')
+        }
+        else {
+            // Show error to the user
+            display.show('error');
+        }
+    
+    }

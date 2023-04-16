@@ -35,73 +35,77 @@
             </form>
         </div>
     </nav>
+
+    <div id="message"></div>
+
+
     <div class="container my-3">
         <h1>Harry Library</h1>
         <hr>
         <form id="libraryForm">
-            <div class="row mb-3">
+            <div class="form-group row">
                 <label for="bookName" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="bookName" placeholder="Book Name">
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="form-group row">
                 <label for="Author" class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="author" placeholder="Author">
                 </div>
             </div>
-            <fieldset class="row mb-3">
-                <legend class="col-form-label col-sm-2 pt-0">Type</legend>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="type" id="fiction" value="fiction" checked>
-                        <label class="form-check-label" for="fiction">
-                            Fiction
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="type" id="programming" value="programming">
-                        <label class="form-check-label" for="sprogramming">
-                            Computer Programming
-                        </label>
-                    </div>
-                    <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="type" id="cooking " value="cooking">
-                        <label class="form-check-label" for="cooking">
-                            Cooking
-                        </label>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="fiction" value="fiction"
+                                checked>
+                            <label class="form-check-label" for="fiction">
+                                Fiction
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="programming"
+                                value="programming">
+                            <label class="form-check-label" for="programming">
+                                Computer Programming
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="type" id="cooking" value="cooking">
+                            <label class="form-check-label" for="cooking">
+                                Cooking
+                            </label>
+                        </div>
                     </div>
                 </div>
             </fieldset>
+
             <div class="form-group row">
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Add Book</button>
+                </div>
+            </div>
         </form>
+
         <div id="table">
             <h1>Your books</h1>
 
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Author</th>
                         <th scope="col">Type</th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
-            </table>>
+                <tbody id='tableBody'></tbody>
+            </table>
         </div>
-
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="index.js"></script>
